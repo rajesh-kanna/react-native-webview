@@ -34,7 +34,7 @@ static NSURLCredential* clientAuthenticationCredential;
 @property (nonatomic, copy) RCTDirectEventBlock onLoadingProgress;
 @property (nonatomic, copy) RCTDirectEventBlock onShouldStartLoadWithRequest;
 @property (nonatomic, copy) RCTDirectEventBlock onMessage;
-@property (nonatomic, copy) WKWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
 @end
 
 @implementation RNCWKWebView
