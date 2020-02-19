@@ -14,6 +14,7 @@ import Alerts from './examples/Alerts';
 import Scrolling from './examples/Scrolling';
 import Background from './examples/Background';
 import Downloads from './examples/Downloads';
+import Uploads from './examples/Uploads';
 
 const TESTS = {
   Alerts: {
@@ -46,6 +47,14 @@ const TESTS = {
     description: 'File downloads test',
     render() {
       return <Downloads />;
+    },
+  },
+  Uploads: {
+    title: 'Uploads',
+    testId: 'uploads',
+    description: 'Upload test',
+    render() {
+      return <Uploads />;
     },
   },
 };
@@ -105,6 +114,11 @@ export default class App extends Component<Props, State> {
             testID="testType_downloads"
             title="Downloads"
             onPress={() => this._changeTest('Downloads')}
+          />}
+          {Platform.OS === 'android' && <Button
+            testID="testType_uploads"
+            title="Uploads"
+            onPress={() => this._changeTest('Uploads')}
           />}
         </View>
 
